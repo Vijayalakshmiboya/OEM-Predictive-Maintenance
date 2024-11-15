@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predictive Maintenance Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Predictive Maintenance Dashboard</h1>
+    <div id="anomalies">
+        <!-- Anomaly data will populate here -->
+    </div>
+    <script>
+        fetch("/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ /* Add test sensor data here */ })
+        }).then(response => response.json())
+          .then(data => console.log(data));
+    </script>
+</body>
+</html>
